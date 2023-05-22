@@ -1,3 +1,4 @@
+
 //CS116PjEx02
 //20230517
 //Shun Hoi Yeung
@@ -23,7 +24,7 @@ int distance(int speedInMile, int timeInHr);
 bool positiveRecivier(int& poistiveNumber);
 void displaydistanceTable(int timeInHr, int distance);
 
-void main() {
+int main() {
     int mph = 0, hr = 0;
 
     do {
@@ -47,17 +48,16 @@ void main() {
 
     displaydistanceTable(hr, mph);
 
-    return;
+    return 0;
 }
 
-void displaydistanceTable(int timeInHr, int mph) {
+void displaydistanceTable(const int timeInHr, const int mph) {
     printf("Hour\tDistance Traveled In Miles\n");
-    printf("---------------------------------------\n");
+    printf("----------------------------------\n");
 
     for (int i = (timeInHr < 1) ? 0 : 1; i <= timeInHr; i++) {
         printf("%d\t%d\n", i, distance(mph, i));
     }
-    printf("\n");
 }
 
 int distance(int speedInMile, int timeInHr) {
@@ -67,8 +67,8 @@ int distance(int speedInMile, int timeInHr) {
 bool positiveRecivier(int& poistiveNumber) {
     // try{
     // bool temp = (cin >> poistiveNumber);
-    while ( cin >> poistiveNumber && poistiveNumber > 0) {
-       return true;
+    while (cin >> poistiveNumber && poistiveNumber > 0) {
+        return true;
     }
     // Input Validation: Do not accept a negative number for speed and do not accept any value less than I for time traveled.
     throw std::invalid_argument("input must be positive");
