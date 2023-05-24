@@ -20,9 +20,9 @@
 
 using namespace std;
 
-int distance(int speedInMile, int timeInHr);
+int distance(const int speedInMile, const int timeInHr);
 bool positiveRecivier(int& poistiveNumber);
-void displaydistanceTable(int timeInHr, int distance);
+void displaydistanceTable(const int timeInHr, const int distance);
 
 int main() {
     int mph = 0, hr = 0;
@@ -38,7 +38,7 @@ int main() {
     } while (mph <= 0);
     do {
         try {
-            printf("How many hours has it traveled? ");
+            printf("For how many hours has it traveled? ");
             positiveRecivier(hr);
         }
         catch (std::invalid_argument& e) {
@@ -46,6 +46,7 @@ int main() {
         }
     } while (hr <= 0);
 
+    printf("\n");
     displaydistanceTable(hr, mph);
 
     return 0;
